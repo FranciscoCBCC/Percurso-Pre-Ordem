@@ -1,0 +1,53 @@
+package ArvoreBinaria;
+
+public class ArvoreBinaria {
+
+	public static void main(String[] args) {
+		
+		//Criação dos nós
+		No a = new No('a');
+		No b = new No('b');
+		No c = new No('c');
+		No d = new No('d');
+		No e = new No('e');
+		No ad = new No('+');
+		No sub = new No('-');
+		No mult = new No('*');
+		No div = new No('/');
+
+		//Determina a posição de cada um em relação a sei nó pai, caso possua.
+		//Adição
+		ad.setEsq(a);
+		ad.setDir(mult);
+		//Multiplicação
+		mult.setEsq(b);
+		mult.setDir(sub);
+		//Subtração
+		sub.setEsq(div);
+		sub.setDir(e);
+		//Divisão
+		div.setEsq(c);
+		div.setDir(d);
+		
+		//Executa a pré-ordem a partir de "ad" que no nosso caso é a raiz
+		ad.preOrdem(ad);
+		
+		//Executa em pós-ordem a partir de "ad" que no nosso caso é a raiz
+		ad.posOrdem(ad);
+		
+		//Executa em ordem simétrica a partir de "ad" que no nosso caso é a raiz
+		ad.simetrica(ad);
+		
+		/*No a = new No('a');
+		No b = new No('b');
+		No c = new No('c');
+		
+		a.setEsq(b);
+		a.setDir(c);
+		
+		a.preOrdem(a);
+		*/
+		
+	}
+
+}
